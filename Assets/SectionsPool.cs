@@ -12,7 +12,7 @@ public class SectionsPool : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		
+        FillPool();
 	}
 	
 	// Update is called once per frame

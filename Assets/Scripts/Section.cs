@@ -5,6 +5,9 @@ using UnityEngine;
 public class Section : MonoBehaviour {
 
     public int index;
+    public bool turnsLeft;
+    public bool turnsRight;
+
     // Use this for initialization
 	void Start () {
 		
