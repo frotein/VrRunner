@@ -448,7 +448,7 @@ public class OVRPlayerController : MonoBehaviour
     /// </summary>
     public void Stop()
 	{
-        stopped = true;
+        stopped = !stopped;
         boosting = false;
 	}
 
