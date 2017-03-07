@@ -41,10 +41,10 @@ public class LevelGenerator : MonoBehaviour {
 
 
         Vector3 translate = currentS.end.position - newSection.start.position;
-        newSection.transform.Translate(translate);
+        newSection.transform.position +=translate;
 
         currentSection = section;
-        //section.forward = -currentSection.forward;
+        section.forward = -currentS.end.forward;
     }
 
     
