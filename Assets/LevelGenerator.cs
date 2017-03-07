@@ -18,17 +18,34 @@ public class LevelGenerator : MonoBehaviour {
     {
         currentSection = startingSection.transform;
         currentIndex = 0;
+        pool.FillPool();
+        for(int i = 0; i < 3; i++)
+            AddSection();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
-    IEnumerator EndlessGenerator()
+    void AddSection()
     {
+        Transform section = pool.GetRandomSection();
+        section.gameObject.SetActive(true);
+        Section newSection = section.GetComponent<Section>();
+        Section currentS = currentSection.GetComponent<Section>();
+       
 
 
-        yield return null;
+
+
+        Vector3 translate = currentS.end.position - newSection.start.position;
+        newSection.transform.Translate(translate);
+
+        currentSection = section;
+        //section.forward = -currentSection.forward;
     }
+
+    
 }
